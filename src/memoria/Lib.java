@@ -5,8 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Lib {
-    public int[] memoria = new int[1048576];
 
+    private Memoria memoria;
 
     public short extract_bits (short value, int bstart, int blength){
         short mask = (short)((1 << blength) - 1);

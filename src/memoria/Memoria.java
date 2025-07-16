@@ -1,11 +1,17 @@
 package memoria;
 
 public class Memoria {
-    private int[] memoria = new int[1048576];
+    private short[] memoria;
 
-    public int[] getMemoria(){
-        return memoria;
+    public Memoria(int tamanho){
+        memoria = new short[tamanho];
     }
 
-    int abigaill;
+    public void escreverNaMemoria(short enderecoDaMemoria, short valor){
+        memoria[enderecoDaMemoria & 0xFFFF] = valor;
+    }
+
+    public short lerMemoria(short enderecoDaMemoria){
+        return memoria[enderecoDaMemoria & 0xFFFF];
+    }
 }
