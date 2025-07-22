@@ -11,7 +11,6 @@ public class CPU {
 
     public CPU(Memoria memoria){
         this.memoria = memoria;
-        this.instrucoes = new Instrucoes(memoria, this);
     }
 
     public short getPc(){

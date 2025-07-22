@@ -86,6 +86,14 @@ public class Instrucoes {
                 memoria.escreverNaMemoria(endereco, valor);
             }
 
+            else if(opcode == 63){ //syscall
+                short servico = registradores.getBancoRegistradores(0);
+
+                if(servico == 0){
+                    cpu.setPc((short)(memoria.getTamanho() -1));
+                }
+            }
+
         }
         else if(tipoInstrucao == 1){
             short opcode = lib.extract_bits(instrucao, 13, 2);
