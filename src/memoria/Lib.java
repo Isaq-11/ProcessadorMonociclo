@@ -8,13 +8,20 @@ public class Lib {
 
     private Memoria memoria;
 
+    public Lib(){
+    }
+
+    public Lib(Memoria memoria){
+        this.memoria = memoria;
+    }
+
     public short extract_bits (short value, int bstart, int blength){
         short mask = (short)((1 << blength) - 1);
         return (short)((value >> bstart) & mask);
     }
 
     public void memory_write (short addr, short value){
-        memoria[0] = value;
+        memoria.escreverNaMemoria(addr, value);
     }
 
     void load_binary (String binary_name)
