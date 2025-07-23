@@ -13,6 +13,10 @@ public class CPU {
         this.memoria = memoria;
     }
 
+    public void setInstrucoes(Instrucoes instrucoes){
+        this.instrucoes = instrucoes;
+    }
+
     public short getPc(){
         return pc;
     }
@@ -23,7 +27,6 @@ public class CPU {
 
     public void executarPrograma(){
         while(pc < memoria.getTamanho() && pc > -1){
-            instrucoes.setInstrucoes(pc);
             short instrucao = memoria.lerMemoria(pc);
             instrucoes.executarInstrucao(instrucao);
             pc++;

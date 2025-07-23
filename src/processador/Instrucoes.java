@@ -16,10 +16,6 @@ public class Instrucoes {
         this.cpu = cpu;
     }
 
-    public void setInstrucoes(short novaInstrucao){
-        this.instrucao = novaInstrucao;
-    }
-
     public void executarInstrucao(short instrucao){
         
         short tipoInstrucao = lib.extract_bits(instrucao, 15, 1);

@@ -15,10 +15,12 @@ public class Main {
         CPU cpu = new CPU(memory);
 
         Instrucoes inst = new Instrucoes(memory, cpu);
+        cpu.setInstrucoes(inst);
 
-        cpu.executarPrograma();
+        //cpu.executarPrograma();
 
         //memory.imprimirMemoria(32);
+        System.out.println(memory.getTamanho());
 
     }
 }
