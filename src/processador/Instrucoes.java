@@ -92,7 +92,7 @@ public class Instrucoes {
                 short servico = registradores.getBancoRegistradores(0);
 
                 if(servico == 0){
-                    cpu.setPc((short)(memoria.getTamanho() -1));
+                    cpu.encerrarPrograma();
                 }
             }
 
