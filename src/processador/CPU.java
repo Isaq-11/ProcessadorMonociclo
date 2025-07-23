@@ -21,10 +21,12 @@ public class CPU {
         this.pc = novoPc;
     }
 
-    public void executar(){
-        while(true){
+    public void executarPrograma(){
+        while(pc < memoria.getTamanho() && pc > -1){
+            instrucoes.setInstrucoes(pc);
             short instrucao = memoria.lerMemoria(pc);
-            
+            instrucoes.executarInstrucao(instrucao);
+            pc++;
         }
     }
 

@@ -9,9 +9,15 @@ public class Instrucoes {
     private CPU cpu;
     private Memoria memoria;
 
+    private short instrucao;
+
     public Instrucoes(Memoria memoria, CPU cpu){
         this.memoria = memoria;
         this.cpu = cpu;
+    }
+
+    public void setInstrucoes(short novaInstrucao){
+        this.instrucao = novaInstrucao;
     }
 
     public void executarInstrucao(short instrucao){

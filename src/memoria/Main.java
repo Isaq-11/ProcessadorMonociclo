@@ -1,18 +1,25 @@
 package memoria;
 
+import processador.*;
+
 public class Main {
     public static void main(String[] args) {
 
         Memoria memory = new Memoria(1024);
-
+        Bin bin = new Bin();
         Lib lib = new Lib(memory);
 
-        Bin bin = new Bin();
-
-        String caminhoBinario = bin.sleep;
-
+        String caminhoBinario = "C:/msys64/home/Aluno/arq-sim-assembler/asm-example/print.bin";
         lib.load_binary(caminhoBinario);
-        memory.imprimirMemoria(32);
+
+        CPU cpu = new CPU(memory);
+
+        Instrucoes inst = new Instrucoes(memory, cpu);
+
+        cpu.executarPrograma();
+
+        //memory.imprimirMemoria(32);
+
     }
 }
 
