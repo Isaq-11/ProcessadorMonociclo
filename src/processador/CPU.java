@@ -26,9 +26,10 @@ public class CPU {
     }
 
     public void executarPrograma(){
-        while(pc < memoria.getTamanho() && pc > -1){
+        while(pc < memoria.getTamanho()){
             short instrucao = memoria.lerMemoria(pc);
             instrucoes.executarInstrucao(instrucao);
+            System.out.println(pc);
             pc++;
         }
     }
