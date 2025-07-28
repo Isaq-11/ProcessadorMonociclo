@@ -9,7 +9,7 @@ public class Main {
         Bin bin = new Bin();
         Lib lib = new Lib(memory);
 
-        String caminhoBinario = "C:/msys64/home/Aluno/arq-sim-assembler/asm-example/perfectSquares.bin";
+        String caminhoBinario = "C:/msys64/home/Aluno/arq-sim-assembler/asm-example/print.bin";
         lib.load_binary(caminhoBinario);
 
         CPU cpu = new CPU(memory);
@@ -17,10 +17,10 @@ public class Main {
         Instrucoes inst = new Instrucoes(memory, cpu);
         cpu.setInstrucoes(inst);
 
-        cpu.executarPrograma();
+        //cpu.executarPrograma();
 
         //memory.imprimirMemoria(32);
-        //System.out.println(memory.getTamanho());
+        System.out.println(memory.getTamanho());
 
     }
 }
