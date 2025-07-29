@@ -16,7 +16,7 @@ public class Instrucoes {
         this.cpu = cpu;
     }
 
-    public void executarInstrucao(short instrucao){
+    public boolean executarInstrucao(short instrucao){
         
         short tipoInstrucao = lib.extract_bits(instrucao, 15, 1);
 
@@ -93,7 +93,7 @@ public class Instrucoes {
 
                 if(servico == 0){
                     cpu.encerrarPrograma();
-                    return;
+                    return true;
                 }
             }
 
@@ -108,13 +108,13 @@ public class Instrucoes {
 
             if(opcode == 0){ //jump
                 cpu.setPc(imediato);
-                return;
+                return true;
             }
 
             else if(opcode == 1){ //jump_cond
                 if(registradores.getBancoRegistradores(reg) != 0){
                     cpu.setPc(imediato);
-                    return;
+                    return true;
                 }
             }
             
@@ -122,9 +122,6 @@ public class Instrucoes {
                 registradores.escreverNoRegistrador(reg, imediato);
             }
         }
-
     }
-
-
-
+    return false;
 }
