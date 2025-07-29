@@ -36,7 +36,7 @@ public class CPU {
             short instrucao = memoria.lerMemoria(pc);
             System.out.println(pc);
             instrucoes.executarInstrucao(instrucao);
-            setPc = ((short) (getPc()+1); 
+            setPc((short)(getPc()+1); 
         }
     }
 
