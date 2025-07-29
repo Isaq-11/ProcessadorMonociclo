@@ -34,9 +34,9 @@ public class CPU {
     public void executarPrograma(){
         while(executando == true && pc < memoria.getTamanho()){
             short instrucao = memoria.lerMemoria(pc);
-            instrucoes.executarInstrucao(instrucao);
             System.out.println(pc);
-            pc++;
+            instrucoes.executarInstrucao(instrucao);
+            setPc = ((short) (getPc()+1); 
         }
     }
 
