@@ -93,6 +93,7 @@ public class Instrucoes {
 
                 if(servico == 0){
                     cpu.encerrarPrograma();
+                    return;
                 }
             }
 
@@ -107,11 +108,13 @@ public class Instrucoes {
 
             if(opcode == 0){ //jump
                 cpu.setPc(imediato);
+                return;
             }
 
             else if(opcode == 1){ //jump_cond
                 if(registradores.getBancoRegistradores(reg) != 0){
                     cpu.setPc(imediato);
+                    return;
                 }
             }
             
