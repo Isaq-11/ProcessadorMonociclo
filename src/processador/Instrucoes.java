@@ -89,12 +89,13 @@ public class Instrucoes {
             }
 
             else if(opcode == 63){ //syscall
-                short servico = registradores.getBancoRegistradores(0);
+                ;
+                //short servico = registradores.getBancoRegistradores(0);
 
-                if(servico == 0){
-                    cpu.encerrarPrograma();
-                    return true;
-                }
+                //if(servico == 0) {
+                cpu.encerrarPrograma();
+                return true;
+                //}
             }
 
         }

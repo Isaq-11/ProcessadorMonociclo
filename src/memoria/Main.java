@@ -9,7 +9,7 @@ public class Main {
         Bin bin = new Bin();
         Lib lib = new Lib(memory);
 
-        String caminhoBinario = "C:/msys64/home/Aluno/arq-sim-assembler/asm-example/print.bin";
+        String caminhoBinario = "C:\\Users\\Aluno\\Downloads\\home\\Aluno\\arq-sim-assembler\\asm-example\\print2.bin";
         lib.load_binary(caminhoBinario);
 
         CPU cpu = new CPU(memory);
@@ -26,3 +26,4 @@ public class Main {
 }
 
 // /home/isaqu/arq-sim-assembler/asm-example
+// "C:\Users\Aluno\Downloads\home\Aluno\arq-sim-assembler\asm-example\count.bin"
