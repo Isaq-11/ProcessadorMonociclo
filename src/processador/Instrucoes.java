@@ -122,6 +122,6 @@ public class Instrucoes {
                 registradores.escreverNoRegistrador(reg, imediato);
             }
         }
+        return false;
     }
-    return false;
 }
