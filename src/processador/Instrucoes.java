@@ -5,15 +5,16 @@ import memoria.*;
 public class Instrucoes {
 
     private Lib lib = new Lib();
-    private Registradores registradores = new Registradores();
     private CPU cpu;
     private Memoria memoria;
+    private Registradores registradores;
 
     private short instrucao;
 
-    public Instrucoes(Memoria memoria, CPU cpu){
+    public Instrucoes(Memoria memoria, CPU cpu, Registradores registradores){
         this.memoria = memoria;
         this.cpu = cpu;
+        this.registradores = registradores;
     }
 
     public boolean executarInstrucao(short instrucao){
@@ -89,12 +90,16 @@ public class Instrucoes {
             }
 
             else if(opcode == 63){ //syscall
-                ;
-                //short servico = registradores.getBancoRegistradores(0);
+                short servico = registradores.getBancoRegistradores(0);
+                if(servico == 0) {
+                    cpu.encerrarPrograma();
+                    return true;
+                }
 
-                //if(servico == 0) {
-                cpu.encerrarPrograma();
-                return true;
+                //else if(servico == 1){
+                    //int indice = 1;
+                    //short valorASerImpresso = registradores.getBancoRegistradores(1);
+                    //System.out.println("registrador" + indice + ": " + valorASerImpresso);
                 //}
             }
 
