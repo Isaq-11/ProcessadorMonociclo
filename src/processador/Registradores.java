@@ -16,7 +16,7 @@ public class Registradores {
         return bancoRegistradores[indice];
     }
 
-    public void imprimir() {
+    public void imprimirBancoRegistradores() {
         for (int i = 0; i < bancoRegistradores.length; i++) {
             System.out.printf("R%d: %04x\n", i, bancoRegistradores[i]);
         }

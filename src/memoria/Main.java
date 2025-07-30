@@ -8,8 +8,9 @@ public class Main {
         Memoria memory = new Memoria(1024);
         Bin bin = new Bin();
         Lib lib = new Lib(memory);
+        Registradores regist = new Registradores();
 
-        String caminhoBinario = "C:\\Users\\Aluno\\Downloads\\home\\Aluno\\arq-sim-assembler\\asm-example\\print2.bin";
+        String caminhoBinario = "C:\\Users\\Aluno\\Downloads\\home\\Aluno\\arq-sim-assembler\\asm-example\\dynamicMemory.bin";
         lib.load_binary(caminhoBinario);
 
         CPU cpu = new CPU(memory);
@@ -19,7 +20,8 @@ public class Main {
 
         cpu.executarPrograma();
 
-        //memory.imprimirMemoria(32);
+        memory.imprimirMemoria(90);
+        regist.imprimirBancoRegistradores();
         //System.out.println(memory.getTamanho());
 
     }
