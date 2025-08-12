@@ -24,7 +24,7 @@ public class Lib {
         memoria.escreverNaMemoria(addr, value);
     }
 
-    void load_binary (String binary_name)
+    public void load_binary(String binary_name)
     {
         try {
             FileInputStream fileInputStream = new FileInputStream(binary_name);

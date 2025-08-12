@@ -1,5 +1,8 @@
-package memoria;
+package app;
 
+import memoria.Bin;
+import memoria.Lib;
+import memoria.Memoria;
 import processador.*;
 
 public class Main {
@@ -20,7 +23,7 @@ public class Main {
         cpu.executarPrograma();
 
         //memory.imprimirMemoria(90);
-        regist.imprimirBancoRegistradores();
+        //regist.imprimirBancoRegistradores();
         //System.out.println(memory.getTamanho());
 
     }
