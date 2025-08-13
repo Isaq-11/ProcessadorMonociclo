@@ -1,6 +1,5 @@
 package app;
 
-import memoria.Bin;
 import memoria.Lib;
 import memoria.Memoria;
 import processador.*;
@@ -9,11 +8,11 @@ public class Main {
     public static void main(String[] args) {
 
         Memoria memory = new Memoria(1024);
-        Bin bin = new Bin();
         Lib lib = new Lib(memory);
         Registradores regist = new Registradores();
 
-        String caminhoBinario = "C:\\Users\\Aluno\\Downloads\\home\\Aluno\\arq-sim-assembler\\asm-example\\perfectSquares.bin";
+        // colocar em caminhoBinario o endereço do arquivo binário
+        String caminhoBinario = "bin/count.bin";
         lib.load_binary(caminhoBinario);
 
         CPU cpu = new CPU(memory, regist);
@@ -22,12 +21,8 @@ public class Main {
 
         cpu.executarPrograma();
 
-        //memory.imprimirMemoria(90);
-        //regist.imprimirBancoRegistradores();
-        //System.out.println(memory.getTamanho());
+        memory.imprimirMemoria(90);
+        regist.imprimirBancoRegistradores();
 
     }
 }
-
-// /home/isaqu/arq-sim-assembler/asm-example
-// "C:\Users\Aluno\Downloads\home\Aluno\arq-sim-assembler\asm-example\count.bin"
