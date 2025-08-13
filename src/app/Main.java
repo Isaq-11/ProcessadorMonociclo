@@ -12,7 +12,7 @@ public class Main {
         Registradores regist = new Registradores();
 
         // colocar em caminhoBinario o endereço do arquivo binário
-        String caminhoBinario = "bin/count.bin";
+        String caminhoBinario = "bin/simple1.bin";
         lib.load_binary(caminhoBinario);
 
         CPU cpu = new CPU(memory, regist);
@@ -22,6 +22,7 @@ public class Main {
         cpu.executarPrograma();
 
         memory.imprimirMemoria(90);
+        System.out.println("----------------------------------------");
         regist.imprimirBancoRegistradores();
 
     }

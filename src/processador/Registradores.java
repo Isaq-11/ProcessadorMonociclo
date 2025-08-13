@@ -2,7 +2,7 @@ package processador;
 
 public class Registradores {
 
-    private short[] bancoRegistradores = new short[32];
+    private short[] bancoRegistradores = new short[8];
 
     public short getBancoRegistradores(int indice){
         return bancoRegistradores[indice];
